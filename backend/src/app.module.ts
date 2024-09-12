@@ -1,10 +1,12 @@
 import { Module } from '@nestjs/common';
 import { CountryModule } from './modules/countries/country.module';
+import { ConfigModule } from '@nestjs/config';
 
 
 @Module({
   imports: [
-    CountryModule
+    CountryModule,
+    ConfigModule.forRoot()
   ],
   controllers: [],
   providers: [],

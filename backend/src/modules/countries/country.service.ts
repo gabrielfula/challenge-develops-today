@@ -9,9 +9,36 @@ export class CountryService {
   async listAll(): Promise<object> {
 
     const countries = await firstValueFrom(
-      this.httpService.get("https://date.nager.at/api/v3/AvailableCountries")
+      this.httpService.get(`${process.env.DATE_NAGGER_API}/AvailableCountries`)
     );
 
     return countries.data;
-  }
+  };
+
+  async detailsByIso(iso: string): Promise<object> {
+
+    const country = await firstValueFrom(
+      this.httpService.get(`${process.env.DATE_NAGGER_API}/CountryInfo/${iso}`)
+    );
+
+    return country.data;
+  };
+
+  async population(): Promise<object> {
+
+    const countries = await firstValueFrom(
+      this.httpService.get(`${process.env.COUNTRY_NOW_API}/population`)
+    );
+
+    return countries.data;
+  };
+
+  async flagImage(): Promise<object> {
+
+    const flag = await firstValueFrom(
+      this.httpService.get(`${process.env.COUNTRY_NOW_API}/flag/images`)
+    );
+
+    return flag.data;
+  };
 }
