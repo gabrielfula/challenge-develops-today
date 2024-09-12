@@ -19,7 +19,7 @@ export class CountryController {
 
   @Get('flag')
   async flag(): Promise<any> {
-    return await this.countryService.population();
+    return await this.countryService.flagImage();
   };
 
   @Get('/:iso')
