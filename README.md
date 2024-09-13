@@ -1,44 +1,35 @@
-🚀 Challenge DevelopsToday
+# 🚀 Challenge DevelopsToday
 
-📋 Backend Setup Instructions
+## 📋 Backend Setup Instructions
 To run the backend project locally, follow these steps:
 
-Install Dependencies:
+1. **Install Dependencies:&**
+  ```bash
+    npm install
 
-bash
-Copy code
-npm install
-Set Up Environment Variables:
+2. **Copy the example environment file:**
+Edit the .env file with the values like .env.example.
 
-Copy the example environment file:
-bash
-Copy code
-cp .env.example .env
-Edit the .env file with your specific values.
-Start the Project:
 
-bash
-Copy code
-npm run start:dev
+3. **Start the Project:**
+  ```bash
+    npm run start:dev
+
 The project will start on port 3000.
-📋 Frontend Setup Instructions
+
+
+## 📋 Frontend Setup Instructions
 To run the frontend project locally, follow these steps:
 
-Install Dependencies:
+1. **Install Dependencies:&**
+  ```bash
+    npm install
 
-bash
-Copy code
-npm install
-Set Up Environment Variables:
+2. **Copy the example environment file:**
+Edit the .env file with the values like .env.example.
 
-Copy the example environment file:
-bash
-Copy code
-cp .env.example .env
-Edit the .env file with your specific values.
-Start the Project:
-
-bash
-Copy code
-npm run dev
+3. **Start the Project:**
+  ```bash
+    npm run dev
+    
 The project will start on port 3001.
