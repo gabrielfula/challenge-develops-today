@@ -33,12 +33,14 @@ export class CountryService {
     return countries.data;
   };
 
-  async flagImage(): Promise<object> {
+  async flagImage(iso: string): Promise<object> {
 
     const flag = await firstValueFrom(
       this.httpService.get(`${process.env.COUNTRY_NOW_API}/flag/images`)
     );
 
-    return flag.data;
+    const flagFiltered = await (flag.data.data).filter((item: any) => item.iso2 === iso);
+
+    return flagFiltered;
   };
 }

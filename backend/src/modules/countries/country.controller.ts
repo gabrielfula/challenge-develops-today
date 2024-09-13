@@ -17,9 +17,9 @@ export class CountryController {
     return await this.countryService.population();
   };
 
-  @Get('flag')
-  async flag(): Promise<any> {
-    return await this.countryService.flagImage();
+  @Get('flag/:iso')
+  async flag(@Param() params: any): Promise<any> {
+    return await this.countryService.flagImage(params.iso);
   };
 
   @Get('/:iso')
