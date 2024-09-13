@@ -24,13 +24,15 @@ export class CountryService {
     return country.data;
   };
 
-  async population(): Promise<object> {
+  async population(countryName: string): Promise<object> {
 
     const countries = await firstValueFrom(
       this.httpService.get(`${process.env.COUNTRY_NOW_API}/population`)
     );
 
-    return countries.data;
+    const flagFiltered = await (countries.data.data).filter((item: any) => item.country === countryName);
+
+    return flagFiltered;
   };
 
   async flagImage(iso: string): Promise<object> {

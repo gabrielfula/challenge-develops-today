@@ -1,4 +1,4 @@
-import { Controller, Get, Param } from '@nestjs/common';
+import { Controller, Get, Param, Query } from '@nestjs/common';
 import { CountryService } from './country.service';
 
 
@@ -13,8 +13,8 @@ export class CountryController {
   };
 
   @Get('population')
-  async populationDetails(): Promise<any> {
-    return await this.countryService.population();
+  async populationDetails(@Query() query: any): Promise<any> {
+    return await this.countryService.population(query.country);
   };
 
   @Get('flag/:iso')
